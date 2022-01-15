@@ -8,8 +8,27 @@
 
 // Body
 
+body {
+  width: 100%;
+  background-color: $background-primary-colour;
+  overflow-x: hidden;
+  color: $text-primary-colour;
+}
+
 // Nav
+
+nav {
+  font-family: $nav-font;
+
+  ul {
+    display: grid;
+  }
+}
 
 // Main
 
 // Footer
+
+// Mobile => Tablet
+
+// Tablet => Desktop

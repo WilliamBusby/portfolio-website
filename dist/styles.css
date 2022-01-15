@@ -1,4 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
+}
+
+body {
+  width: 100%;
+  background-color: #343434;
+  overflow-x: hidden;
+  color: #f7fff7;
+}
+
+nav {
+  font-family: "Space Grotesk", sans-serif;
+}
+nav ul {
+  display: grid;
 }
