@@ -6,8 +6,8 @@
 
 // Fonts
 
-$nav-font: 'Space Grotesk', sans-serif;
-$main-heading-font: 'Space Mono', monospace;
+$heading-font: 'Space Mono', monospace;
+$secondary-font: 'Space Grotesk', sans-serif;
 
 // Background colours
 
@@ -25,3 +25,5 @@ $star-two-colour: rgba(238, 238, 238, 0.60); // Medium stars
 $star-three-colour: rgba(238, 238, 238, 0.40); // Smallest stars
 
 // Borders and drop shadows
+
+$main-project-image-border: 1px solid #f7fff7; // Images of websites

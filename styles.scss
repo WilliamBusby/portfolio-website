@@ -13,19 +13,52 @@ body {
   background-color: $background-primary-colour;
   overflow-x: hidden;
   color: $text-primary-colour;
+  text-align: center;
+
+  a {
+    color: $text-primary-colour;
+
+    &:hover {
+      color: $background-footer-colour;
+    }
+  }
+
+  // Background design
+
+  h1 {
+    font-family: $heading-font;
+  }
+
+  h2 {
+    font-family: $secondary-font;
+  }
+
+  p {
+    font-family: $secondary-font;
+  }
 }
 
 // Nav
 
 nav {
-  font-family: $nav-font;
+  font-family: $secondary-font;
 
   ul {
     display: grid;
   }
 }
 
+// Header
+
+header {
+  text-align: center;
+}
+
 // Main
+
+main {
+  text-align: left;
+}
 
 // Footer
 

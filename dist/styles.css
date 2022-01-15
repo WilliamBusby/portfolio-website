@@ -10,6 +10,22 @@ body {
   background-color: #343434;
   overflow-x: hidden;
   color: #f7fff7;
+  text-align: center;
+}
+body a {
+  color: #f7fff7;
+}
+body a:hover {
+  color: #b796ac;
+}
+body h1 {
+  font-family: "Space Mono", monospace;
+}
+body h2 {
+  font-family: "Space Grotesk", sans-serif;
+}
+body p {
+  font-family: "Space Grotesk", sans-serif;
 }
 
 nav {
@@ -17,4 +33,12 @@ nav {
 }
 nav ul {
   display: grid;
+}
+
+header {
+  text-align: center;
+}
+
+main {
+  text-align: left;
 }
