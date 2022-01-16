@@ -72,14 +72,17 @@ body {
 
   h1 {
     font-family: $heading-font;
+    font-size: 80px; // Change for responsive
   }
 
   h2 {
     font-family: $secondary-font;
+    font-size: 20px; // Change for responsive
   }
 
   p {
     font-family: $secondary-font;
+    font-size: 15px; // Change for responsive
   }
 }
 
@@ -108,7 +111,8 @@ nav {
 // Header
 
 header {
-  text-align: center;
+  text-align: left;
+  padding-left: 15%;
 }
 
 // Main
