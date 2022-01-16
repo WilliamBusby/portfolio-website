@@ -9,25 +9,28 @@
 
 // Function
 
-@function multiple-box-shadows($n) {
-  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+@function multiple-box-shadows($n, $colour) {
+  $value: '#{random(2000)}px #{random(2000)}px #{$colour}';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #{$colour}';
   }
   @return unquote($value);
 }
 
-@mixin keyframes() {
-  @keyframes animStar {
-    from {
-      transform: translateY(0%)
-    }
 
-    to {
-      transform: translateY(-100%)
-    }
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
   }
 }
+
+@mixin starInfo($size, $time) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  animation: animStar $time linear infinite;
+}
+
 
 // Body
 
@@ -37,6 +40,31 @@ body {
   overflow-x: hidden;
   color: $text-primary-colour;
   text-align: center;
+
+  @include keyframes(animStar) {
+    from{
+      transform: translateY(0px);
+    }
+
+    to{
+      transform: translateY(-4000px);
+    }
+  }
+
+  #small-stars {
+    @include starInfo(1px, 10s);
+    box-shadow: multiple-box-shadows(500, $star-three-colour);
+  }
+
+  #medium-stars {
+    @include starInfo(2px, 40s);
+    box-shadow: multiple-box-shadows(200, $star-two-colour);
+  }
+
+  #big-stars {
+    @include starInfo(4px, 100s);
+    box-shadow: multiple-box-shadows(100, $star-one-colour)
+  }
 
   a {
     color: $text-primary-colour;
