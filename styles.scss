@@ -96,15 +96,21 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 1.2vw; // Const px for min-width desktop
+  font-size: 2.5vw; // Const px for min-width desktop, and 1.2vw as needed
   padding: 10px;
-  margin: 2em 25vw;
+  margin: 2em 1vw; // Change for min-width 25vw
   display: flex;
   justify-content: center;
 
+  button {
+    background: transparent;
+    border: none;
+    overflow: none;
+  }
+
   #drop-down-anchor {
     position: fixed;
-    width: 20vh;
+    width: 20vw;
     top: 0vh;
     align-self: center;
   }
@@ -114,20 +120,7 @@ nav {
     list-style-type: none;
     width: 100%;
     justify-content: space-between;
-
-
-    &__line {
-      margin-left: 0.25vw;
-      margin-right: 0.25vw;
-    }
-  }
-
-  #drop-down:target {
-    display: flex;
-
-    #drop-down-anchor {
-      display: none;
-    }
+    top: -10vh;
   }
 
 }

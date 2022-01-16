@@ -14,7 +14,8 @@
     <nav id="home">
       <!-- <input class="drop-down" type="checkbox" id="drop-down__checkbox" name="drop-down__checkbox">
       <label for="drop-down__checkbox"></label> -->
-      <a href="#drop-down" title="Open Drop Down" id="drop-down-anchor"><svg viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button title="Open Drop Down" id="drop-down-anchor" onClick="navHideShow()">
+        <svg viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
         <mask id="path-1-inside-1_85_17" fill="white">
         <path fill-rule="evenodd" clip-rule="evenodd" d="M250 250C388.071 250 500 138.071 500 0H0C0 138.071 111.929 250 250 250Z"/>
         </mask>
@@ -24,15 +25,15 @@
         <rect x="150.5" y="130.5" width="199" height="29" rx="4.5" fill="#343434" stroke="black"/>
         <rect x="150.5" y="80.5" width="199" height="29" rx="4.5" fill="#343434" stroke="black"/>
         </svg>
-        </a>
+      </button>
       <ul class="ul" id="drop-down">
-        <li class="ul__item ul__text" id="nav-home"><a href="#home" title="Home">HOME</a></li>
+        <li class="ul__item ul__text" id="nav-home"><a href="#home" title="Home" onclick="navShowHide()">HOME</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-projects"><a href="#main-projects" title="Projects">PROJECTS</a></li>
+        <li class="ul__item ul__text" id="nav-projects"><a href="#main-projects" title="Projects" onclick="navShowHide()">PROJECTS</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-about-me"><a href="#main-about-me" title="About me">ABOUT ME</a></li>
+        <li class="ul__item ul__text" id="nav-about-me"><a href="#main-about-me" title="About me" onclick="navShowHide()">ABOUT ME</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-contact"><a href="#main-contact-me" title="Contact me">CONTACT ME</a></li>
+        <li class="ul__item ul__text" id="nav-contact"><a href="#main-contact-me" title="Contact me" onclick="navShowHide()">CONTACT ME</a></li>
         <li class="ul__item ul__line">|</div>
           <!-- To do, update resume link to pdf of CV -->
         <li class="ul__item ul__text" id="nav-resume"><a href="#" title="Resume">RESUME</a></li> 
@@ -92,5 +93,18 @@
       <div class="footer__item" id="footer-email"></div>
       <div></div>
     </footer>
+
+    <script>
+      function navHideShow() {
+
+        document.getElementById('drop-down-anchor').style.display = 'none';
+        document.getElementById('drop-down').style.display = 'flex';
+      }
+
+      function navShowHide() {
+        document.getElementById('drop-down-anchor').style.display = 'flex';
+        document.getElementById('drop-down').style.display = 'none';
+      }
+    </script>
   </body>
 </html>
