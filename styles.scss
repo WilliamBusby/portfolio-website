@@ -102,9 +102,15 @@ nav {
   display: flex;
   justify-content: center;
 
+  #drop-down-anchor {
+    position: fixed;
+    width: 20vh;
+    top: 0vh;
+    align-self: center;
+  }
 
   .ul {
-    display: flex;
+    display: none;
     list-style-type: none;
     width: 100%;
     justify-content: space-between;
@@ -115,6 +121,15 @@ nav {
       margin-right: 0.25vw;
     }
   }
+
+  #drop-down:target {
+    display: flex;
+
+    #drop-down-anchor {
+      display: none;
+    }
+  }
+
 }
 
 // Header
