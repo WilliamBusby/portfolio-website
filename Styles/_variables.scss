@@ -27,3 +27,13 @@ $star-three-colour: rgba(238, 238, 238, 0.40); // Smallest stars
 // Borders and drop shadows
 
 $main-project-image-border: 1px solid #f7fff7; // Images of websites
+
+// Mixins
+
+@mixin starInfo($size, $shadow-info, $time) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  box-shadow: $shadow-info;
+  animation: animStar $time linear infinite;
+}

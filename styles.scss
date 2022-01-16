@@ -1,9 +1,32 @@
-
 @use "./Styles/variables" as *;
+
+// @import "compass/css3";
 
 * {
   margin: 0;
   padding: 0;
+}
+
+// Function
+
+@function multiple-box-shadows($n) {
+  $value: '#{random(2000)}px #{random(2000)}px #FFF';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #FFF';
+  }
+  @return unquote($value);
+}
+
+@mixin keyframes() {
+  @keyframes animStar {
+    from {
+      transform: translateY(0%)
+    }
+
+    to {
+      transform: translateY(-100%)
+    }
+  }
 }
 
 // Body
@@ -42,9 +65,21 @@ body {
 
 nav {
   font-family: $secondary-font;
+  font-size: 20px;
+  width: 40%;
+  padding: 10px;
+  margin: 2em auto;
 
-  ul {
+
+  .ul {
     display: grid;
+    grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr 2.5fr 1fr 2fr;
+    list-style-type: none;
+
+    &__line {
+      margin-left: 5px;
+      margin-right: 5px;
+    }
   }
 }
 
