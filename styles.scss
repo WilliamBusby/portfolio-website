@@ -17,21 +17,6 @@
   @return unquote($value);
 }
 
-
-@mixin keyframes($name) {
-  @keyframes #{$name} {
-    @content;
-  }
-}
-
-@mixin starInfo($size, $time) {
-  width: $size;
-  height: $size;
-  background: transparent;
-  animation: animStar $time linear infinite;
-}
-
-
 // Body
 
 body {
@@ -47,23 +32,32 @@ body {
     }
 
     to{
-      transform: translateY(-4000px);
+      transform: translateY(-2000px);
     }
   }
 
   #small-stars {
     @include starInfo(1px, 10s);
     box-shadow: multiple-box-shadows(500, $star-three-colour);
+    &:after {
+      @include starAfter(1px);
+    }
   }
 
   #medium-stars {
     @include starInfo(2px, 40s);
     box-shadow: multiple-box-shadows(200, $star-two-colour);
+    &:after {
+      @include starAfter(2px);
+    }
   }
 
   #big-stars {
     @include starInfo(4px, 100s);
-    box-shadow: multiple-box-shadows(100, $star-one-colour)
+    box-shadow: multiple-box-shadows(100, $star-one-colour);
+    &:after {
+      @include starAfter(4px);
+    }
   }
 
   a {

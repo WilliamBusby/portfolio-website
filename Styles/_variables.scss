@@ -30,3 +30,24 @@ $main-project-image-border: 1px solid #f7fff7; // Images of websites
 
 // Mixins
 
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin starInfo($size, $time) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  animation: animStar $time linear infinite;
+}
+
+@mixin starAfter($size) {
+  width: $size;
+  height: $size;
+  background: transparent;
+  content: " ";
+  position: absolute;
+  position: 5000px;
+}
