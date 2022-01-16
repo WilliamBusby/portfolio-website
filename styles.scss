@@ -75,7 +75,7 @@ body {
 
   h1 {
     font-family: $heading-font;
-    font-size: 6vw; // Change for responsive
+    font-size: 8vw; // Change for responsive
   }
 
   h2 {
@@ -98,6 +98,8 @@ nav {
   padding: 10px;
   margin: 2em 25vw;
   height: 10vh;
+  display: flex;
+  justify-content: center;
 
   .ul {
     display: grid;
@@ -117,15 +119,14 @@ header {
   width: 100%;
   text-align: left;
   padding-left: 10vw;
-  height: 20vh;
+  height: 60vh;
   display: flex;
-  align-items: left;
   flex-direction: column;
   padding-top: 20vh;
-  margin-bottom: 30vh;
+  padding-bottom: 2vh;
 
   h2 {
-    font-size: 2.5vw; // Change for responsive
+    font-size: 3vw; // Change for responsive
   }
 }
 
