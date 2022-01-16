@@ -96,11 +96,12 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 2.5vw; // Const px for min-width desktop, and 1.2vw as needed
+  font-size: 3vw; // Const px for min-width desktop, and 1.2vw as needed
   padding: 10px;
   margin: 2em 1vw; // Change for min-width 25vw
   display: flex;
   justify-content: center;
+  height: 3vw;
 
   button {
     background: transparent;
@@ -111,7 +112,7 @@ nav {
   #drop-down-anchor {
     position: fixed;
     width: 20vw;
-    top: 0vh;
+    top: 0;
     align-self: center;
   }
 
