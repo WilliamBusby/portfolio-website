@@ -20,7 +20,7 @@ function circularText(txt, radius, classIndex) {
   var deg = 120 / txt.length,
       origin = -60;
   txt.forEach(function (ea) {
-    ea = "<p style='height:".concat(radius, "vw;position:absolute;transform:rotate(").concat(origin, "deg);transform-origin: 0 100%;right: 4.5vw;bottom: 5vw;'>").concat(ea, "</p>");
+    ea = "<p style='height:".concat(radius, "vw;position:absolute;transform:rotate(").concat(origin, "deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>").concat(ea, "</p>");
     classIndex.innerHTML += ea;
     origin += deg;
   });

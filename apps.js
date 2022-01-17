@@ -25,7 +25,7 @@ function circularText(txt, radius, classIndex) {
     origin = -60;
 
   txt.forEach((ea) => {
-    ea = `<p style='height:${radius}vw;position:absolute;transform:rotate(${origin}deg);transform-origin: 0 100%;right: 4.5vw;bottom: 5vw;'>${ea}</p>`;
+    ea = `<p style='height:${radius}vw;position:absolute;transform:rotate(${origin}deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>${ea}</p>`;
     classIndex.innerHTML += ea;
     origin += deg;
   });
