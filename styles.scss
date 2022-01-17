@@ -95,7 +95,7 @@ body {
 
   p {
     font-family: $secondary-font;
-    font-size: 1vw; // Change for responsive
+    font-size: 2vw; // Change for responsive
   }
 }
 
@@ -233,10 +233,6 @@ main {
       &__text {
         width: 35vw;
 
-        &__desc {
-          font-size: 2vw;
-        }
-
         &__title-and-icons {
           display: flex;
           justify-content: space-between;
@@ -264,6 +260,23 @@ main {
 
     #project-4-image {
       background-color: yellow;
+    }
+  }
+
+  #main-about-me {
+    
+    margin-bottom: 5vw;
+
+    &__content {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 5vw;
+
+      &__image {
+        border: 1px solid $text-primary-colour;
+        border-radius: 10px;
+        background-color: purple;
+      }
     }
   }
 }
