@@ -207,10 +207,11 @@ main {
   }
 
   #main-projects {
-
+    width: 100%;
     display: grid;
     grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
     row-gap: 5vw;
+    margin-bottom: 5vw;
 
     h1 {
       text-align: center;
@@ -225,25 +226,45 @@ main {
       
       &__image {
         width: 35vw;
-        border: 1px solid #f7fff7
+        border: 1px solid #f7fff7;
+        border-radius: 5px;
       }
 
       &__text {
         width: 35vw;
 
+        &__desc {
+          font-size: 2vw;
+        }
+
         &__title-and-icons {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          margin-bottom: 1vw;
         }
       }
 
       &__icons {
-        font-size: 2vw;
+        font-size: 4vw;
       }
     }
 
+    #project-1-image {
+      background-color: red;
+    }
 
+    #project-2-image {
+      background-color: blue;
+    }
+
+    #project-3-image {
+      background-color: green;
+    }
+
+    #project-4-image {
+      background-color: yellow;
+    }
   }
 }
 
