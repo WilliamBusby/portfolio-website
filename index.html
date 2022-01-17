@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>William Busby Portfolio</title>
     <link rel="stylesheet" href="./dist/styles.css">
+    <script src="https://kit.fontawesome.com/5f0266d93a.js" crossorigin="anonymous"></script>
   </head>
-  <body>
+  <body id="body">
     <div id="home"></div>
     <div id="small-stars"></div>
     <div id="medium-stars"></div>
@@ -52,39 +53,75 @@
       </svg>          
     </section>
 
+    <div class="section-divider"></div>
+
     <main>
       <section id="main-projects">
-        <h2>PROJECTS</h2>
+        <h1>PROJECTS</h1>
         <div class="project-area">
           <div class="project-area__text">
             <div class="project-area__text__title-and-icons">
               <h3 class="project-area__text__title">Project #1</h3>
-              <i src=""></i> 
+              <div class="project-area__icons">
+                <i class="fab fa-github"></i> 
+                <i class="fas fa-link"></i>
+              </div>
             </div>
-            <p class="project-area__text__desc">Lorem ipsum lorem ipsum</p>
+            <p class="project-area__text__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus.</p>
           </div>
-          <div class="project-area__image">Image</div>
+          <div class="project-area__image" id="project-1-image"></div>
         </div>
         <div class="project-area">
-          <div class="project-area__image">Image</div>
-          <div class="project-area__text">Lorem Ipsum</div>
+          <div class="project-area__image" id="project-2-image"></div>
+          <div class="project-area__text">
+            <div class="project-area__text__title-and-icons">
+              <h3 class="project-area__text__title">Project #2</h3>
+              <div class="project-area__icons">
+                <i class="fab fa-github"></i> 
+                <i class="fas fa-link"></i>
+              </div>
+            </div>
+            <p class="project-area__text__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus.</p>
+          </div>
         </div>
         <div class="project-area">
-          <div class="project-area__text">Lorem Ipsum</div>
-          <div class="project-area__image">Image</div>
+          <div class="project-area__text">
+            <div class="project-area__text__title-and-icons">
+              <h3 class="project-area__text__title">Project #3</h3>
+              <div class="project-area__icons">
+                <i class="fab fa-github"></i> 
+                <i class="fas fa-link"></i>
+              </div>
+            </div>
+            <p class="project-area__text__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus.</p>
+          </div>
+          <div class="project-area__image" id="project-3-image"></div>
         </div>
         <div class="project-area">
-          <div class="project-area__image">Image</div>
-          <div class="project-area__text">Lorem Ipsum</div>
+          <div class="project-area__image" id="project-4-image"></div>
+          <div class="project-area__text">
+            <div class="project-area__text__title-and-icons">
+              <h3 class="project-area__text__title">Project #4</h3>
+              <div class="project-area__icons">
+                <i class="fab fa-github"></i> 
+                <i class="fas fa-link"></i>
+              </div>
+            </div>
+            <p class="project-area__text__desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus.</p>
+          </div>
         </div>
       </section>
+      <div class="section-divider"></div>
       <section id="main-about-me">
-        <h2>ABOUT ME</h2>
-        <p>Lorem ipsum lorem ipsum lorem ipsum</p>
+        <h1>ABOUT ME</h1>
+        <div id="main-about-me__image"></div>
+        <div id="main-about-me__text">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus. Nunc vitae imperdiet odio. Sed diam lectus, maximus nec sollicitudin in, aliquet sit amet elit. Morbi ac interdum metus. Suspendisse ullamcorper eget orci eu tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel augue et massa mollis tempor. Proin nec velit auctor, consequat lacus lobortis, lobortis odio. Fusce ante ligula, fermentum nec magna sit amet, pharetra sodales sapien.</p>
+        </div>
       </section>
+      <div class="section-divider"></div>
       <section id="main-contact-me">
-        <h2>CONTACT ME</h2>
-        <div id="personal-picture"></div>
+        <h1>CONTACT ME</h1>
         <div id="contact-form"></div>
       </section>
     </main>
