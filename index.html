@@ -114,15 +114,33 @@
       <div class="section-divider"></div>
       <section id="main-about-me">
         <h1>ABOUT ME</h1>
-        <div id="main-about-me__image"></div>
-        <div id="main-about-me__text">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus. Nunc vitae imperdiet odio. Sed diam lectus, maximus nec sollicitudin in, aliquet sit amet elit. Morbi ac interdum metus. Suspendisse ullamcorper eget orci eu tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce vel augue et massa mollis tempor. Proin nec velit auctor, consequat lacus lobortis, lobortis odio. Fusce ante ligula, fermentum nec magna sit amet, pharetra sodales sapien.</p>
+        <div id="main-about-me__content">
+          <div id="main-about-me__content__image"></div>
+          <div id="main-about-me__content__text">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin dictum nisl ac varius blandit. Donec et dignissim lorem, eget scelerisque augue. Nunc ex mi, elementum in felis sed, pharetra varius risus. Nunc vitae imperdiet odio. Sed diam lectus, maximus nec sollicitudin in, aliquet sit amet elit. Morbi ac interdum metus. Suspendisse ullamcorper eget orci eu tincidunt. </p>
+          </div>
         </div>
       </section>
       <div class="section-divider"></div>
       <section id="main-contact-me">
         <h1>CONTACT ME</h1>
-        <div id="contact-form"></div>
+        <div id="main-contact-me__content">
+          <div id="main-contact-me__explain">
+            <p>Feel free to contact me either using the form or via the Github and Linkedin links in the footer.</p>
+            <div id="main-contact-me__image"></div>
+          </div>
+          <form id="contact-form">
+            <label for="contact-me-first-name" class="label-contact">First Name:</label>
+            <input type="text" id="contact-me-first-name"/>
+            <label for="contact-me-last-name" class="label-contact">Last Name:</label>
+            <input type="text" id="contact-me-last-name"/>
+            <label for="contact-me-email" class="label-contact">Email:</label>
+            <input type="email" id="contact-me-email"/>
+            <label for="contact-me-textinfo" class="label-contact">Please leave your message here.</label>
+            <input type="textarea" id="contact-me-textinfo" rows=5 cols=20 name="contact-me-textinfo"/>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
       </section>
     </main>
 
