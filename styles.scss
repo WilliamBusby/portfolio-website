@@ -157,6 +157,25 @@ header {
   animation: bounce 2s linear infinite;
 }
 
+// Techstack
+
+#techstack {
+
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  // text-align: center;
+
+  svg {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  // div.circText {
+  //   display: absolute;
+  // }
+}
+
 // Main
 
 main {
