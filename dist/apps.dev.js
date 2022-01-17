@@ -9,11 +9,10 @@ function navHideShow() {
 function navShowHide() {
   document.getElementById('drop-down-anchor').style.display = 'flex';
   document.getElementById('drop-down').style.display = 'none';
-}
-
-function scrollNavBar() {
-  document.getElementById("drop-down-anchor").display.width = '10vw';
-} // Techstack
+} // function scrollNavBar() {
+//   document.getElementById('drop-down-anchor').style.width = '10vw';
+// }
+// Techstack
 
 
 function circularText(txt, radius, classIndex) {
@@ -27,8 +26,4 @@ function circularText(txt, radius, classIndex) {
   });
 }
 
-circularText("TECHSTACK", 8, 0);
-
-document.getElementById("body").onscroll = function () {
-  scrollNavBar();
-};
+circularText("TECHSTACK", 8, 0); // window.onscroll(scrollNavBar())

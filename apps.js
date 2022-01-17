@@ -11,9 +11,9 @@ function navShowHide() {
   document.getElementById('drop-down').style.display = 'none';
 }
 
-function scrollNavBar() {
-  document.getElementById("drop-down-anchor").display.width = '10vw';
-}
+// function scrollNavBar() {
+//   document.getElementById('drop-down-anchor').style.width = '10vw';
+// }
 
 // Techstack
 
@@ -32,4 +32,4 @@ function circularText(txt, radius, classIndex) {
 }
 
 circularText("TECHSTACK", 8, 0)
-document.getElementById("body").onscroll = function() {scrollNavBar()}
+// window.onscroll(scrollNavBar())
