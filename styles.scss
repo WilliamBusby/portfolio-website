@@ -77,13 +77,20 @@ body {
   // Background design
 
   h1 {
-    font-family: $heading-font;
-    font-size: 8vw; // Change for responsive
+    text-align: center;
+    padding-bottom: 5vw;
+    font-size: 5vw;
+    padding-top: 3vw;
   }
 
   h2 {
     font-family: $secondary-font;
     font-size: 2vw; // Change for responsive
+  }
+
+  h3 {
+    font-family: $secondary-font;
+    font-size: 3.5vw;
   }
 
   p {
@@ -136,7 +143,15 @@ header {
   display: flex;
   flex-direction: column;
   padding-top: 30vh;
-  padding-bottom: 4vh;
+  // padding-bottom: 4vh;
+
+  h1 {
+    font-family: $heading-font;
+    font-size: 8vw; // Change for responsive
+    text-align: left;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 
   h2 {
     font-size: 3vw; // Change for responsive
@@ -170,10 +185,66 @@ header {
   }
 }
 
+// Section divider
+
+.section-divider {
+  width: 80%;
+  border: 1px solid $text-primary-colour;
+  margin-left: 10%;
+}
+
 // Main
 
 main {
   text-align: left;
+  width: 80%;
+  margin-left: 10%;
+  font-family: $secondary-font;
+
+  .section-divider {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  #main-projects {
+
+    display: grid;
+    grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+    row-gap: 5vw;
+
+    h1 {
+      text-align: center;
+      padding-bottom: 5vw;
+      font-size: 5vw;
+      padding-top: 3vw;
+    }
+
+    .project-area {
+      display: flex;
+      justify-content: space-between;
+      
+      &__image {
+        width: 35vw;
+        border: 1px solid #f7fff7
+      }
+
+      &__text {
+        width: 35vw;
+
+        &__title-and-icons {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+        }
+      }
+
+      &__icons {
+        font-size: 2vw;
+      }
+    }
+
+
+  }
 }
 
 // Footer
