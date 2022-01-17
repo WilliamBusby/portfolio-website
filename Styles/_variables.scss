@@ -49,5 +49,15 @@ $main-project-image-border: 1px solid #f7fff7; // Images of websites
   background: transparent;
   content: " ";
   position: absolute;
-  position: 5000px;
+  top: 2000px;
+}
+
+// Functions
+
+@function multiple-box-shadows($n, $colour) {
+  $value: '#{random(2000)}px #{random(2000)}px #{$colour}';
+  @for $i from 2 through $n {
+    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #{$colour}';
+  }
+  @return unquote($value);
 }

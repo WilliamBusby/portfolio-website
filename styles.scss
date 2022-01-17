@@ -7,16 +7,6 @@
   padding: 0;
 }
 
-// Function
-
-@function multiple-box-shadows($n, $colour) {
-  $value: '#{random(2000)}px #{random(2000)}px #{$colour}';
-  @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #{$colour}';
-  }
-  @return unquote($value);
-}
-
 // Body
 
 body {
@@ -36,11 +26,24 @@ body {
     }
   }
 
+  @include keyframes(bounce) {
+    0% {
+      bottom: 0;
+    }
+    50% {
+      bottom: 20px;
+    }
+    100% {
+      bottom: 0;
+    }
+  }
+
   #small-stars {
     @include starInfo(1px, 10s);
     box-shadow: multiple-box-shadows(500, $star-three-colour);
     &:after {
       @include starAfter(1px);
+      box-shadow: multiple-box-shadows(500, $star-three-colour);
     }
   }
 
@@ -49,6 +52,7 @@ body {
     box-shadow: multiple-box-shadows(200, $star-two-colour);
     &:after {
       @include starAfter(2px);
+      box-shadow: multiple-box-shadows(200, $star-two-colour);
     }
   }
 
@@ -57,11 +61,13 @@ body {
     box-shadow: multiple-box-shadows(100, $star-one-colour);
     &:after {
       @include starAfter(4px);
+      box-shadow: multiple-box-shadows(200, $star-two-colour);;
     }
   }
 
   a {
     color: $text-primary-colour;
+    text-decoration: none;
 
     &:hover {
       color: $background-footer-colour;
@@ -72,17 +78,17 @@ body {
 
   h1 {
     font-family: $heading-font;
-    font-size: 80px; // Change for responsive
+    font-size: 8vw; // Change for responsive
   }
 
   h2 {
     font-family: $secondary-font;
-    font-size: 20px; // Change for responsive
+    font-size: 2vw; // Change for responsive
   }
 
   p {
     font-family: $secondary-font;
-    font-size: 15px; // Change for responsive
+    font-size: 1vw; // Change for responsive
   }
 }
 
@@ -90,29 +96,84 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 20px;
-  width: 40%;
+  font-size: 3vw; // Const px for min-width desktop, and 1.2vw as needed
   padding: 10px;
-  margin: 2em auto;
+  margin: 2em 1vw; // Change for min-width 25vw
+  display: flex;
+  justify-content: center;
+  height: 3vw;
 
+  button {
+    background: transparent;
+    border: none;
+    overflow: none;
+  }
+
+  #drop-down-anchor {
+    position: fixed;
+    width: 20vw;
+    top: 0;
+    align-self: center;
+  }
 
   .ul {
-    display: grid;
-    grid-template-columns: 2fr 1fr 2fr 1fr 2fr 1fr 2.5fr 1fr 2fr;
+    display: none;
     list-style-type: none;
-
-    &__line {
-      margin-left: 5px;
-      margin-right: 5px;
-    }
+    width: 100%;
+    justify-content: space-between;
+    top: -10vh;
   }
+
 }
 
 // Header
 
 header {
+  width: 100%;
   text-align: left;
-  padding-left: 15%;
+  padding-left: 10vw;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30vh;
+  padding-bottom: 4vh;
+
+  h2 {
+    font-size: 3vw; // Change for responsive
+  }
+}
+
+// Down button
+
+.down-button {
+  position: absolute;
+  bottom: 5vh;
+  text-align: center;
+  left: 47.5vw;
+  background: url('https://static1.squarespace.com/static/5e78f290575a6321739eba41/t/5ec8625c6dad0e25fa5a8234/1590190684880/Arrow.png');
+  height: 5vmax;
+  width: 5vmax;
+  background-size: 100% auto;
+  animation: bounce 2s linear infinite;
+}
+
+// Techstack
+
+#techstack {
+
+  position: absolute;
+  bottom: 5vw;
+  right: 5vw;
+  // text-align: center;
+
+  svg {
+    width: 10vw;
+    height: 10vw;
+  }
+
+  // div.circText {
+  //   display: absolute;
+  // }
 }
 
 // Main

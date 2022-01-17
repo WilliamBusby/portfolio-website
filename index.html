@@ -8,36 +8,60 @@
     <link rel="stylesheet" href="./dist/styles.css">
   </head>
   <body>
+    <div id="home"></div>
     <div id="small-stars"></div>
     <div id="medium-stars"></div>
     <div id="big-stars"></div>
-    <nav id="home">
-      <ul class="ul">
-        <li class="ul__item ul__text" id="nav-home"><a href="#home">HOME</a></li>
+    <nav id="nav">
+      <button title="Open Drop Down" id="drop-down-anchor" onClick="navHideShow()">
+        <svg viewBox="0 0 500 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="path-1-inside-1_85_17" fill="white">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M250 250C388.071 250 500 138.071 500 0H0C0 138.071 111.929 250 250 250Z"/>
+        </mask>
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M250 250C388.071 250 500 138.071 500 0H0C0 138.071 111.929 250 250 250Z" fill="#F7FFF7"/>
+        <path d="M500 0H501V-1H500V0ZM0 0V-1H-1V0H0ZM499 0C499 137.519 387.519 249 250 249V251C388.623 251 501 138.623 501 0H499ZM500 -1H0V1H500V-1ZM250 249C112.481 249 1 137.519 1 0H-1C-1 138.623 111.377 251 250 251V249Z" fill="black" mask="url(#path-1-inside-1_85_17)"/>
+        <rect x="150.5" y="30.5" width="199" height="29" rx="4.5" fill="#343434" stroke="black"/>
+        <rect x="150.5" y="130.5" width="199" height="29" rx="4.5" fill="#343434" stroke="black"/>
+        <rect x="150.5" y="80.5" width="199" height="29" rx="4.5" fill="#343434" stroke="black"/>
+        </svg>
+      </button>
+      <ul class="ul" id="drop-down">
+        <li class="ul__item ul__text" id="nav-home"><a href="#home" title="Home" onclick="navShowHide()">HOME</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-projects"><a href="#main-projects">PROJECTS</a></li>
+        <li class="ul__item ul__text" id="nav-projects"><a href="#main-projects" title="Projects" onclick="navShowHide()">PROJECTS</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-about-me"><a href="#main-about-me">ABOUT ME</a></li>
+        <li class="ul__item ul__text" id="nav-about-me"><a href="#main-about-me" title="About me" onclick="navShowHide()">ABOUT ME</a></li>
         <li class="ul__item ul__line">|</li>
-        <li class="ul__item ul__text" id="nav-contact"><a href="#main-contact-me">CONTACT ME</a></li>
+        <li class="ul__item ul__text" id="nav-contact"><a href="#main-contact-me" title="Contact me" onclick="navShowHide()">CONTACT ME</a></li>
         <li class="ul__item ul__line">|</div>
           <!-- To do, update resume link to pdf of CV -->
-        <li class="ul__item ul__text" id="nav-resume"><a href="#">RESUME</a></li> 
+        <li class="ul__item ul__text" id="nav-resume"><a href="#" title="Resume">RESUME</a></li> 
       </ul>
     </nav>
     <header>
-      <h1>William.</h1>
-      <h2>Lorem ipsum lorem ipsum lorem ipsum.</h2>
+      <h1>William</h1>
+      <h2>Junior software engineer.</h2>
     </header>
+
+    <a href="#main-projects" class="down-button" title="Next section (projects)"></a>
+
+    <section id="techstack">
+      <div class="circText" id="techstack-text"></div>
+      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="250" cy="250" r="250" fill="#F7FFF7"/>
+      </svg>          
+    </section>
+
     <main>
-      <section id="main-techstack">
-        <h2>TECHSTACK</h2>
-      </section>
       <section id="main-projects">
         <h2>PROJECTS</h2>
         <div class="project-area">
           <div class="project-area__text">
-
+            <div class="project-area__text__title-and-icons">
+              <h3 class="project-area__text__title">Project #1</h3>
+              <i src=""></i> 
+            </div>
+            <p class="project-area__text__desc">Lorem ipsum lorem ipsum</p>
           </div>
           <div class="project-area__image">Image</div>
         </div>
@@ -64,6 +88,7 @@
         <div id="contact-form"></div>
       </section>
     </main>
+
     <footer>
       <div></div>
       <div class="footer__item" id="footer-github"></div>
@@ -71,5 +96,6 @@
       <div class="footer__item" id="footer-email"></div>
       <div></div>
     </footer>
+    <script src="apps.js"></script>
   </body>
 </html>
