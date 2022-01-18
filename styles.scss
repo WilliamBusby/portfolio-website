@@ -70,24 +70,11 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $background-footer-colour;
+      color: $anchor-hover-colour;
     }
   }
 
   // Background design
-
-  h1 {
-    text-align: center;
-    padding-bottom: 5vw;
-    font-size: 5vw;
-    padding-top: 3vw;
-  }
-
-  h2 {
-    font-family: $secondary-font;
-    font-size: 2vw; // Change for responsive
-  }
-
   h3 {
     font-family: $secondary-font;
     font-size: 3.5vw;
@@ -114,6 +101,11 @@ nav {
     background: transparent;
     border: none;
     overflow: none;
+    border-radius: 50%;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #drop-down-anchor {
@@ -155,6 +147,7 @@ header {
 
   h2 {
     font-size: 3vw; // Change for responsive
+    font-family: $secondary-font;
   }
 }
 
@@ -189,7 +182,7 @@ header {
 
 .section-divider {
   width: 80%;
-  border: 1px solid $text-primary-colour;
+  border: $basic-border-design-1px;
   margin-left: 10%;
 }
 
@@ -200,6 +193,13 @@ main {
   width: 80%;
   margin-left: 10%;
   font-family: $secondary-font;
+
+  h1 {
+    text-align: center;
+    padding-bottom: 5vw;
+    font-size: 5vw;
+    padding-top: 3vw;
+  }
 
   .section-divider {
     width: 100%;
@@ -213,20 +213,13 @@ main {
     row-gap: 5vw;
     margin-bottom: 5vw;
 
-    h1 {
-      text-align: center;
-      padding-bottom: 5vw;
-      font-size: 5vw;
-      padding-top: 3vw;
-    }
-
     .project-area {
       display: flex;
       justify-content: space-between;
       
       &__image {
         width: 35vw;
-        border: 1px solid #f7fff7;
+        border: $basic-border-design-1px;
         border-radius: 5px;
       }
 
@@ -247,7 +240,7 @@ main {
     }
 
     .project-divider {
-      border: 1px solid #f7fff7;
+      border: $basic-border-design-1px;
       width: 60%;
       margin-left: 20%;
     }
@@ -279,7 +272,7 @@ main {
       column-gap: 5vw;
 
       &__image {
-        border: 1px solid $text-primary-colour;
+        border: $basic-border-design-1px;
         border-radius: 10px;
         background-color: purple;
       }
@@ -288,7 +281,7 @@ main {
 
   #main-contact-me__content {
 
-    height: 30vw;
+    height: 25vw;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 10vw;
@@ -317,7 +310,7 @@ footer {
   width: 100%;
   display: flex;
   height: 10vw;
-  margin-top: 10vw;
+  margin-top: 2vw;
   background-color: $background-footer-colour;
   flex-direction: column;
   padding-top: 2vw;
@@ -332,8 +325,10 @@ footer {
 
     &__item {
       font-size: 5vw;
+      &:hover {
+        color: $background-primary-colour;
+      }
     }
-    
   }
 }
 
