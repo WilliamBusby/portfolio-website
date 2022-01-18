@@ -121,6 +121,7 @@ nav {
     width: 20vw;
     top: 0;
     align-self: center;
+    // align-self: right; // Used when changing to quarter circle in the corner
   }
 
   .ul {
@@ -130,7 +131,6 @@ nav {
     justify-content: space-between;
     top: -10vh;
   }
-
 }
 
 // Header
