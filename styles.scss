@@ -209,7 +209,7 @@ main {
   #main-projects {
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 0fr 2fr 0fr 2fr 0fr 2fr;
     row-gap: 5vw;
     margin-bottom: 5vw;
 
@@ -244,6 +244,12 @@ main {
       &__icons {
         font-size: 4vw;
       }
+    }
+
+    .project-divider {
+      border: 1px solid #f7fff7;
+      width: 60%;
+      margin-left: 20%;
     }
 
     #project-1-image {
