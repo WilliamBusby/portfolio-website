@@ -12,6 +12,12 @@
   --anchor-size: 10vw;
 }
 
+// HTML
+
+html {
+  scroll-behavior: smooth;
+}
+
 // Body
 
 body {
@@ -102,6 +108,7 @@ nav {
   width: 80vw;
   justify-content: center;
   height: 4vw;
+  transition: 1s;
 
   #drop-down-anchor {
     background: transparent;
@@ -381,6 +388,11 @@ footer {
     padding: 0.1vw;
   }
 
+  #drop-down-anchor:hover {
+    width: min(20vw,20vh) !important;
+    height: min(20vw,20vh) !important;
+}
+
   main {
 
     #main-contact-me {
@@ -409,11 +421,6 @@ footer {
     width: 50vw;
     margin-left: 25vw;
     font-size: 1.2vw;
-  }
-
-  #drop-down-anchor:hover {
-      width: min(25vw,25vh) !important;
-      height: min(25vw,25vh) !important;
   }
 
   header {
