@@ -99,9 +99,9 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 2vw;
+  font-size: 0;
   padding: 10px;
-  margin-top: 2em;
+  margin-top: 5vw;
   margin-left: 10vw;
   display: flex;
   justify-content: center;
@@ -109,12 +109,12 @@ nav {
   justify-content: center;
   height: 4vw;
   transition: 1s;
+  transition-property: font-size;
 
   #drop-down-anchor {
     background: transparent;
     border-left: 1px solid $background-primary-colour;
     border-bottom: 1px solid $background-primary-colour;
-    overflow: none;
     border-bottom-left-radius: 100%;
     border-bottom-right-radius: 0;
     border-top-left-radius: 0;
@@ -134,7 +134,7 @@ nav {
   }
 
   .ul {
-    display: none;
+    display: flex;
     list-style-type: none;
     width: 80vw;
     justify-content: space-between;
@@ -384,7 +384,7 @@ footer {
   nav {
     width: 60vw;
     margin-left: 20vw;
-    font-size: 2vw;
+    font-size: 0;
     padding: 0.1vw;
   }
 
@@ -420,7 +420,7 @@ footer {
   nav {
     width: 50vw;
     margin-left: 25vw;
-    font-size: 1.2vw;
+    font-size: 0;
   }
 
   header {

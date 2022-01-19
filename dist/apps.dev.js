@@ -1,21 +1,33 @@
 "use strict";
 
-var _this = void 0;
-
 // Navigation bar
 function navHideShow() {
   document.getElementById('drop-down-anchor').style.width = '0px';
   document.getElementById('drop-down-anchor').style.height = '0px';
-  document.getElementById('drop-down').style.display = 'flex';
+  var listOfNavItems = document.getElementsByClassName('ul__item');
+
+  for (var i = 0; i < listOfNavItems.length; i++) {
+    if (document.getElementById('body').clientWidth < 768) {
+      listOfNavItems[i].style.fontSize = '2vw';
+    } else if (document.getElementById('body').clientWidth < 992) {
+      listOfNavItems[i].style.fontSize = '1.5vw';
+    } else {
+      listOfNavItems[i].style.fontSize = '1.2vw';
+    }
+  }
 }
 
 function navShowHide() {
   document.getElementById('drop-down-anchor').style.width = 'min(10vw,10vh)';
-  document.getElementById('drop-down-anchor').style.height = 'min(10vw,10vh)'; // document.getElementById('drop-down').style.display = 'none';
+  document.getElementById('drop-down-anchor').style.height = 'min(10vw,10vh)';
+  var listOfNavItems = document.getElementsByClassName('ul__item');
 
-  document.getElementById('drop-down').style.height = '0';
-} // function scrollNavBar() {
-//   document.getElementById('drop-down-anchor').style.width = '10vw';
+  for (var i = 0; i < listOfNavItems.length; i++) {
+    listOfNavItems[i].style.fontSize = '0px';
+  }
+} // Auto activate navShowHide if scrolled down too far
+// if(body.scrollTop > document.getElementById('body').clientHeight) {
+//   navShowHide();
 // }
 // Techstack
 
@@ -39,22 +51,4 @@ window.onload = function getBodyHeight() {
   document.documentElement.style.setProperty('--body-height', bodyHeight);
   document.documentElement.style.setProperty('--transform-Y', -1 * bodyHeight + "px");
   document.documentElement.style.setProperty('--top-height-after', bodyHeight + "px");
-}; // Smooth scrolling
-
-
-var smoothScrolling = function smoothScrolling() {
-  if (_this.attributes.href.value.substr(0, 1) === '#') {
-    // Prevent default anchor click behavior
-    event.preventDefault(); // Store hash
-
-    var hash = _this.hash; // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function () {
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
-    });
-  }
 };
