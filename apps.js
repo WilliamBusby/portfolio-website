@@ -7,7 +7,7 @@ function navHideShow() {
 }
 
 function navShowHide() {
-  document.getElementById('drop-down-anchor').style.display = 'flex';
+  document.getElementById('drop-down-anchor').style.display = 'block';
   document.getElementById('drop-down').style.display = 'none';
 }
 
@@ -33,3 +33,13 @@ function circularText(txt, radius, classIndex) {
 
 circularText("TECHSTACK", 8, 0)
 // window.onscroll(scrollNavBar())
+
+// Body height
+
+window.onload = function getBodyHeight() {
+  const bodyHeight = document.getElementById('body').clientHeight;
+  console.log(bodyHeight);
+  document.documentElement.style.setProperty('--body-height',bodyHeight);
+  document.documentElement.style.setProperty('--transform-Y', -1 * bodyHeight + "px");
+  document.documentElement.style.setProperty('--top-height-after',bodyHeight + "px");
+}
