@@ -25,9 +25,13 @@ function navShowHide() {
 
 // Auto activate navShowHide if scrolled down too far
 
-// if(body.scrollTop > document.getElementById('body').clientHeight) {
-//   navShowHide();
-// }
+window.addEventListener("scroll", function(){
+  var changeHeightValue = window.pageYOffset || document.documentElement.scrollTop;
+  if (changeHeightValue > lastScrollTop){
+     navShowHide()
+  }
+  lastScrollTop = changeHeightValue <= 0 ? 0 : changeHeightValue; // For Mobile or negative scrolling
+}, false)
 
 // Techstack
 

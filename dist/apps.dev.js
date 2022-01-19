@@ -26,11 +26,17 @@ function navShowHide() {
     listOfNavItems[i].style.fontSize = '0px';
   }
 } // Auto activate navShowHide if scrolled down too far
-// if(body.scrollTop > document.getElementById('body').clientHeight) {
-//   navShowHide();
-// }
-// Techstack
 
+
+window.addEventListener("scroll", function () {
+  var changeHeightValue = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (changeHeightValue > lastScrollTop) {
+    navShowHide();
+  }
+
+  lastScrollTop = changeHeightValue <= 0 ? 0 : changeHeightValue; // For Mobile or negative scrolling
+}, false); // Techstack
 
 function circularText(txt, radius, classIndex) {
   txt = txt.split(""), classIndex = document.getElementsByClassName("circText")[classIndex];
