@@ -13,6 +13,7 @@ $secondary-font: 'Space Grotesk', sans-serif;
 
 $background-primary-colour: #343434;
 $background-footer-colour: #b796ac;
+$anchor-hover-colour: #44A1A0;
 
 // Text colours
 
@@ -21,12 +22,16 @@ $text-primary-colour: #f7fff7;
 // Other colours
 
 $star-one-colour: #eee; // Biggest stars
-$star-two-colour: rgba(238, 238, 238, 0.80); // Medium stars
-$star-three-colour: rgba(238, 238, 238, 0.60); // Smallest stars
+$star-two-colour: rgba(238, 238, 238, 0.85); // Medium stars
+$star-three-colour: rgba(238, 238, 238, 1); // Smallest stars
 
 // Borders and drop shadows
 
-$main-project-image-border: 1px solid #f7fff7; // Images of websites
+$basic-border-design-1px: 1px solid #f7fff7; // Images of websites
+
+// Background related
+
+$star-max-value: 10000;
 
 // Mixins
 
@@ -49,15 +54,16 @@ $main-project-image-border: 1px solid #f7fff7; // Images of websites
   background: transparent;
   content: " ";
   position: absolute;
-  top: 2000px;
+  top: (--top-height-after);
 }
 
 // Functions
 
-@function multiple-box-shadows($n, $colour) {
-  $value: '#{random(2000)}px #{random(2000)}px #{$colour}';
+@function multiple-box-shadows($n, $colour, $maxSize) {
+  
+  $value: '#{random($maxSize)}px #{random($maxSize)}px #{$colour}';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{random(2000)}px #{random(2000)}px #{$colour}';
+    $value: '#{$value} , #{random($maxSize)}px #{random($maxSize)}px #{$colour}';
   }
   @return unquote($value);
 }

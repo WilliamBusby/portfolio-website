@@ -1,16 +1,22 @@
 @use "./Styles/variables" as *;
 
-// @import "compass/css3";
-
 * {
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --body-height: 2500;
+  --top-height-after: 2500px;
+  --transform-Y: -2500px;
+  --anchor-size: 10vw;
+}
+
 // Body
 
 body {
-  width: 100%;
+  height: 100%;
+  width: 100vw;
   background-color: $background-primary-colour;
   overflow-x: hidden;
   color: $text-primary-colour;
@@ -22,7 +28,7 @@ body {
     }
 
     to{
-      transform: translateY(-2000px);
+      transform: translateY(var(--transform-Y));
     }
   }
 
@@ -39,29 +45,26 @@ body {
   }
 
   #small-stars {
-    @include starInfo(1px, 10s);
-    box-shadow: multiple-box-shadows(500, $star-three-colour);
+    @include starInfo(1px, 20s);
+    box-shadow: multiple-box-shadows(1000, $star-three-colour, $star-max-value);
     &:after {
       @include starAfter(1px);
-      box-shadow: multiple-box-shadows(500, $star-three-colour);
     }
   }
 
   #medium-stars {
-    @include starInfo(2px, 40s);
-    box-shadow: multiple-box-shadows(200, $star-two-colour);
+    @include starInfo(2px, 60s);
+    box-shadow: multiple-box-shadows(500, $star-two-colour, $star-max-value);
     &:after {
       @include starAfter(2px);
-      box-shadow: multiple-box-shadows(200, $star-two-colour);
     }
   }
 
   #big-stars {
-    @include starInfo(4px, 100s);
-    box-shadow: multiple-box-shadows(100, $star-one-colour);
+    @include starInfo(4px, 120s);
+    box-shadow: multiple-box-shadows(200, $star-one-colour, $star-max-value);
     &:after {
       @include starAfter(4px);
-      box-shadow: multiple-box-shadows(200, $star-two-colour);;
     }
   }
 
@@ -70,24 +73,11 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $background-footer-colour;
+      color: $anchor-hover-colour;
     }
   }
 
   // Background design
-
-  h1 {
-    text-align: center;
-    padding-bottom: 5vw;
-    font-size: 5vw;
-    padding-top: 3vw;
-  }
-
-  h2 {
-    font-family: $secondary-font;
-    font-size: 2vw; // Change for responsive
-  }
-
   h3 {
     font-family: $secondary-font;
     font-size: 3.5vw;
@@ -103,58 +93,79 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 3vw; // Const px for min-width desktop, and 1.2vw as needed
+  font-size: 2vw;
   padding: 10px;
-  margin: 2em 1vw; // Change for min-width 25vw
+  margin-top: 2em;
+  margin-left: 10vw;
   display: flex;
   justify-content: center;
-  height: 3vw;
-
-  button {
-    background: transparent;
-    border: none;
-    overflow: none;
-  }
+  width: 80vw;
+  justify-content: center;
+  height: 4vw;
 
   #drop-down-anchor {
+    background: transparent;
+    border-left: 1px solid $background-primary-colour;
+    border-bottom: 1px solid $background-primary-colour;
+    overflow: none;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    right: 0;
+    width: min(10vw,10vh);
+    height: min(10vw,10vh);
     position: fixed;
-    width: 20vw;
     top: 0;
-    align-self: center;
-    // align-self: right; // Used when changing to quarter circle in the corner
+    z-index: 99;
+    transition: 0.5s;
+
+    &:hover {
+      cursor: pointer;
+    }
+
   }
 
   .ul {
     display: none;
     list-style-type: none;
-    width: 100%;
+    width: 80vw;
     justify-content: space-between;
     top: -10vh;
+
+    a {
+      padding: 1vw;
+    }
+    
+    &__item {
+      transition: 0.5s;
+    }
   }
 }
 
 // Header
 
 header {
-  width: 100%;
+  width: 100vw;
   text-align: left;
   padding-left: 10vw;
-  height: 60vh;
+  height: 20vh;
   display: flex;
   flex-direction: column;
-  padding-top: 30vh;
-  // padding-bottom: 4vh;
+  padding-top: 50vh;
+  padding-bottom: 30vh;
 
   h1 {
     font-family: $heading-font;
-    font-size: 8vw; // Change for responsive
+    font-size: 8vw;
     text-align: left;
     padding-bottom: 0;
     padding-top: 0;
   }
 
   h2 {
-    font-size: 3vw; // Change for responsive
+    font-size: 3vw;
+    font-family: $secondary-font;
   }
 }
 
@@ -188,9 +199,9 @@ header {
 // Section divider
 
 .section-divider {
-  width: 80%;
-  border: 1px solid $text-primary-colour;
-  margin-left: 10%;
+  width: 80vw;
+  border: $basic-border-design-1px;
+  margin-left: 10vw;
 }
 
 // Main
@@ -201,24 +212,25 @@ main {
   margin-left: 10%;
   font-family: $secondary-font;
 
+  h1 {
+    text-align: center;
+    padding-bottom: 5vw;
+    font-size: 5vw;
+    padding-top: 3vw;
+  }
+
   .section-divider {
-    width: 100%;
+    width: 80%;
     margin-left: 0;
   }
 
   #main-projects {
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 2fr 2fr 2fr 2fr;
+    grid-template-rows: 1fr 2fr 0fr 2fr 0fr 2fr 0fr 2fr;
     row-gap: 5vw;
     margin-bottom: 5vw;
-
-    h1 {
-      text-align: center;
-      padding-bottom: 5vw;
-      font-size: 5vw;
-      padding-top: 3vw;
-    }
+    align-items: center;
 
     .project-area {
       display: flex;
@@ -226,7 +238,7 @@ main {
       
       &__image {
         width: 35vw;
-        border: 1px solid #f7fff7;
+        border: $basic-border-design-1px;
         border-radius: 5px;
       }
 
@@ -244,6 +256,12 @@ main {
       &__icons {
         font-size: 4vw;
       }
+    }
+
+    .project-divider {
+      border: $basic-border-design-1px;
+      width: 60%;
+      margin-left: 20%;
     }
 
     #project-1-image {
@@ -273,30 +291,49 @@ main {
       column-gap: 5vw;
 
       &__image {
-        border: 1px solid $text-primary-colour;
+        border: $basic-border-design-1px;
         border-radius: 10px;
         background-color: purple;
       }
     }
   }
 
-  #main-contact-me__content {
+  #main-contact-me {
 
-    height: 30vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10vw;
+    &__content {
+      height: max(15vh, 30vw);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10vw;
+    }
 
     &__image {
-      height: 10vw;
       width: 10vw;
+      height: 10vw;
+    }
+
+    &__explain {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      justify-items: center;
     }
   }
 
   #contact-form {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
+
+    .contact-me-form {
+      height: 2vw;
+      width: 20vw;
+    }
+
+    button {
+      margin-top: 0.5vw;
+      font-size: 2vw;
+    }
 
     .label-contact {
       font-size: 2vw;
@@ -308,10 +345,10 @@ main {
 
 footer {
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   display: flex;
   height: 10vw;
-  margin-top: 10vw;
+  margin-top: 2vw;
   background-color: $background-footer-colour;
   flex-direction: column;
   padding-top: 2vw;
@@ -326,11 +363,122 @@ footer {
 
     &__item {
       font-size: 5vw;
+      &:hover {
+        color: $background-primary-colour;
+      }
     }
-    
   }
 }
 
 // Mobile => Tablet
 
+@media screen and (min-width:768px) {
+
+  nav {
+    width: 60vw;
+    margin-left: 20vw;
+    font-size: 2vw;
+    padding: 0.1vw;
+  }
+
+  main {
+
+    #main-contact-me {
+      &__content {
+        height: max(10vh,25vw);
+      }
+    }
+  }
+
+}
+
 // Tablet => Desktop
+
+@media screen and (min-width:992px) {
+
+  body {
+    h3 {
+      font-size: 2.5vw;
+    }
+    p {
+      font-size: 1.5vw;
+    }
+  }
+
+  nav {
+    width: 50vw;
+    margin-left: 25vw;
+    font-size: 1.2vw;
+  }
+
+  #drop-down-anchor:hover {
+      width: min(25vw,25vh) !important;
+      height: min(25vw,25vh) !important;
+  }
+
+  header {
+
+    padding-top: 45vh;
+
+    h1 {
+      font-size: 5vw;
+    }
+    h2 {
+      font-size: 2.5vw;
+    }
+  }
+
+  main {
+    width: 60%;
+    margin-left: 20%;
+
+    .section-divider {
+      width: 100%;
+    }
+
+    #main-projects {
+      
+      h1 {
+        padding-bottom: 0;
+      }
+
+      .project-area {
+        height: 25vw;
+        align-items: center;
+
+        &__image {
+          width: 25vw;
+          height: 25vw;
+        }
+
+        &__text {
+          width: 25vw;
+          height: 25vw;
+        }
+
+        &__icons {
+          font-size: 3vw;
+        }
+      }
+    }
+
+    #main-contact-me {
+      &__content {
+        height: max(35vh,30vw);
+      }
+    }
+
+    #contact-form {
+      .contact-me-form {
+        font-size: 1.75vw;
+      }
+    }
+
+    #contact-me-textinfo {
+      height: 4vw;
+      width: 20vw;
+      font-size: 2vw;
+      vertical-align: top;
+    }
+  }
+}
