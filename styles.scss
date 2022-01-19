@@ -9,6 +9,7 @@
   --body-height: 2500;
   --top-height-after: 2500px;
   --transform-Y: -2500px;
+  --anchor-size: 10vw;
 }
 
 // Body
@@ -44,7 +45,7 @@ body {
   }
 
   #small-stars {
-    @include starInfo(1px, 10s);
+    @include starInfo(1px, 20s);
     box-shadow: multiple-box-shadows(1000, $star-three-colour, $star-max-value);
     &:after {
       @include starAfter(1px);
@@ -52,7 +53,7 @@ body {
   }
 
   #medium-stars {
-    @include starInfo(2px, 40s);
+    @include starInfo(2px, 60s);
     box-shadow: multiple-box-shadows(500, $star-two-colour, $star-max-value);
     &:after {
       @include starAfter(2px);
@@ -60,7 +61,7 @@ body {
   }
 
   #big-stars {
-    @include starInfo(4px, 10s);
+    @include starInfo(4px, 120s);
     box-shadow: multiple-box-shadows(200, $star-one-colour, $star-max-value);
     &:after {
       @include starAfter(4px);
@@ -92,29 +93,37 @@ body {
 
 nav {
   font-family: $secondary-font;
-  font-size: 3vw;
+  font-size: 2vw;
   padding: 10px;
   margin-top: 2em;
   margin-left: 10vw;
   display: flex;
   justify-content: center;
-  height: 10vh;
   width: 80vw;
+  justify-content: center;
+  height: 4vw;
 
-  button {
+  #drop-down-anchor {
     background: transparent;
-    border: none;
+    border-left: 1px solid $background-primary-colour;
+    border-bottom: 1px solid $background-primary-colour;
     overflow: none;
-    border-radius: 50%;
+    border-bottom-left-radius: 100%;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     right: 0;
     width: min(10vw,10vh);
+    height: min(10vw,10vh);
     position: fixed;
     top: 0;
     z-index: 99;
+    transition: 0.5s;
 
     &:hover {
       cursor: pointer;
     }
+
   }
 
   .ul {
@@ -123,6 +132,14 @@ nav {
     width: 80vw;
     justify-content: space-between;
     top: -10vh;
+
+    a {
+      padding: 1vw;
+    }
+    
+    &__item {
+      transition: 0.5s;
+    }
   }
 }
 
@@ -136,7 +153,7 @@ header {
   display: flex;
   flex-direction: column;
   padding-top: 50vh;
-  padding-bottom: 20vh;
+  padding-bottom: 30vh;
 
   h1 {
     font-family: $heading-font;
@@ -281,26 +298,36 @@ main {
     }
   }
 
-  #main-contact-me__content {
+  #main-contact-me {
 
-    height: 25vw;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 10vw;
+    &__content {
+      height: max(15vh, 30vw);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 10vw;
+    }
 
     &__image {
-      height: 10vw;
       width: 10vw;
+      height: 10vw;
+    }
+
+    &__explain {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      justify-items: center;
     }
   }
 
   #contact-form {
     display: flex;
     flex-direction: column;
+    text-align: center;
     align-items: center;
 
     .contact-me-form {
-      height: 1vw;
+      height: 2vw;
+      width: 20vw;
     }
 
     button {
@@ -351,6 +378,16 @@ footer {
     width: 60vw;
     margin-left: 20vw;
     font-size: 2vw;
+    padding: 0.1vw;
+  }
+
+  main {
+
+    #main-contact-me {
+      &__content {
+        height: max(10vh,25vw);
+      }
+    }
   }
 
 }
@@ -372,6 +409,11 @@ footer {
     width: 50vw;
     margin-left: 25vw;
     font-size: 1.2vw;
+  }
+
+  #drop-down-anchor:hover {
+      width: min(25vw,25vh) !important;
+      height: min(25vw,25vh) !important;
   }
 
   header {
@@ -418,6 +460,25 @@ footer {
           font-size: 3vw;
         }
       }
+    }
+
+    #main-contact-me {
+      &__content {
+        height: max(35vh,30vw);
+      }
+    }
+
+    #contact-form {
+      .contact-me-form {
+        font-size: 1.75vw;
+      }
+    }
+
+    #contact-me-textinfo {
+      height: 4vw;
+      width: 20vw;
+      font-size: 2vw;
+      vertical-align: top;
     }
   }
 }
