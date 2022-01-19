@@ -3,18 +3,35 @@
 function navHideShow() {
   document.getElementById('drop-down-anchor').style.width = '0px';
   document.getElementById('drop-down-anchor').style.height = '0px';
-  document.getElementById('drop-down').style.display = 'flex';
+  const listOfNavItems = document.getElementsByClassName('ul__item');
+  for (let i = 0; i < listOfNavItems.length; i++) {
+    if (document.getElementById('body').clientWidth < 768) {
+      listOfNavItems[i].style.fontSize = '2vw';
+    } else if (document.getElementById('body').clientWidth < 992) {
+      listOfNavItems[i].style.fontSize = '1.5vw';
+    } else {
+      listOfNavItems[i].style.fontSize = '1.2vw';
+    }
+  }
 }
-
 function navShowHide() {
   document.getElementById('drop-down-anchor').style.width = 'min(10vw,10vh)';
   document.getElementById('drop-down-anchor').style.height = 'min(10vw,10vh)';
-  document.getElementById('drop-down').style.display = 'none';
+  const listOfNavItems = document.getElementsByClassName('ul__item');
+  for (let i = 0; i < listOfNavItems.length; i++) {
+    listOfNavItems[i].style.fontSize = '0px';
+  }
 }
 
-// function scrollNavBar() {
-//   document.getElementById('drop-down-anchor').style.width = '10vw';
-// }
+// Auto activate navShowHide if scrolled down too far
+
+window.addEventListener("scroll", function(){
+  var changeHeightValue = window.pageYOffset || document.documentElement.scrollTop;
+  if (changeHeightValue > lastScrollTop){
+     navShowHide()
+  }
+  lastScrollTop = changeHeightValue <= 0 ? 0 : changeHeightValue; // For Mobile or negative scrolling
+}, false)
 
 // Techstack
 
@@ -39,29 +56,7 @@ circularText("TECHSTACK", 8, 0)
 
 window.onload = function getBodyHeight() {
   const bodyHeight = document.getElementById('body').clientHeight;
-  console.log(bodyHeight);
   document.documentElement.style.setProperty('--body-height',bodyHeight);
   document.documentElement.style.setProperty('--transform-Y', -1 * bodyHeight + "px");
   document.documentElement.style.setProperty('--top-height-after',bodyHeight + "px");
 }
-
-// Smooth scrolling
-
-const smoothScrolling = () => {
-  if (this.attributes.href.value.substr(0, 1) === '#') {
-    // Prevent default anchor click behavior
-    event.preventDefault();
-
-    // Store hash
-    var hash = this.hash;
-
-    // Using jQuery's animate() method to add smooth page scroll
-    // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
-    $('html, body').animate({
-      scrollTop: $(hash).offset().top
-    }, 800, function(){
- 
-      // Add hash (#) to URL when done scrolling (default click behavior)
-      window.location.hash = hash;
-    });
-}}
