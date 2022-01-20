@@ -1,11 +1,10 @@
 # portfolio-website
 
-## README
-
   Git repository containing my personal portfolio website. 
-  
 
-  Git repository contains: 
+## CONTENTS
+
+  Main components of git repository: 
 
     - index.html containing html of the website.
 
