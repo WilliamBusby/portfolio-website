@@ -1,6 +1,6 @@
 // Navigation bar
 
-function navHideShow() {
+const navHideShow = () => {
   document.getElementById('drop-down-anchor').style.width = '0px';
   document.getElementById('drop-down-anchor').style.height = '0px';
   const listOfNavItems = document.getElementsByClassName('ul__item');
@@ -14,7 +14,8 @@ function navHideShow() {
     }
   }
 }
-function navShowHide() {
+
+const navShowHide = () => {
   document.getElementById('drop-down-anchor').style.width = 'min(10vw,10vh)';
   document.getElementById('drop-down-anchor').style.height = 'min(10vw,10vh)';
   const listOfNavItems = document.getElementsByClassName('ul__item');
@@ -23,19 +24,21 @@ function navShowHide() {
   }
 }
 
+window.onload = navHideShow();
+
 // Auto activate navShowHide if scrolled down too far
 
-window.addEventListener("scroll", function(){
-  var changeHeightValue = window.pageYOffset || document.documentElement.scrollTop;
-  if (changeHeightValue > lastScrollTop){
-     navShowHide()
-  }
-  lastScrollTop = changeHeightValue <= 0 ? 0 : changeHeightValue; // For Mobile or negative scrolling
-}, false)
+window.addEventListener("scroll", function() {
+    if((window.scrollY || document.documentElement.scrollTop) <= 100) {
+      navHideShow()
+    } else {
+      navShowHide()
+    }
+});
 
 // Techstack
 
-function circularText(txt, radius, classIndex) {
+const  circularText = (txt, radius, classIndex) => {
   txt = txt.split(""),
     classIndex = document.getElementsByClassName("circText")[classIndex];
 
@@ -50,7 +53,6 @@ function circularText(txt, radius, classIndex) {
 }
 
 circularText("TECHSTACK", 8, 0)
-// window.onscroll(scrollNavBar())
 
 // Body height
 

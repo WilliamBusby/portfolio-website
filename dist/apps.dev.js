@@ -1,7 +1,7 @@
 "use strict";
 
 // Navigation bar
-function navHideShow() {
+var navHideShow = function navHideShow() {
   document.getElementById('drop-down-anchor').style.width = '0px';
   document.getElementById('drop-down-anchor').style.height = '0px';
   var listOfNavItems = document.getElementsByClassName('ul__item');
@@ -15,9 +15,9 @@ function navHideShow() {
       listOfNavItems[i].style.fontSize = '1.2vw';
     }
   }
-}
+};
 
-function navShowHide() {
+var navShowHide = function navShowHide() {
   document.getElementById('drop-down-anchor').style.width = 'min(10vw,10vh)';
   document.getElementById('drop-down-anchor').style.height = 'min(10vw,10vh)';
   var listOfNavItems = document.getElementsByClassName('ul__item');
@@ -25,20 +25,19 @@ function navShowHide() {
   for (var i = 0; i < listOfNavItems.length; i++) {
     listOfNavItems[i].style.fontSize = '0px';
   }
-} // Auto activate navShowHide if scrolled down too far
+};
 
+window.onload = navHideShow(); // Auto activate navShowHide if scrolled down too far
 
 window.addEventListener("scroll", function () {
-  var changeHeightValue = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (changeHeightValue > lastScrollTop) {
+  if ((window.scrollY || document.documentElement.scrollTop) <= 100) {
+    navHideShow();
+  } else {
     navShowHide();
   }
+}); // Techstack
 
-  lastScrollTop = changeHeightValue <= 0 ? 0 : changeHeightValue; // For Mobile or negative scrolling
-}, false); // Techstack
-
-function circularText(txt, radius, classIndex) {
+var circularText = function circularText(txt, radius, classIndex) {
   txt = txt.split(""), classIndex = document.getElementsByClassName("circText")[classIndex];
   var deg = 120 / txt.length,
       origin = -60;
@@ -47,10 +46,9 @@ function circularText(txt, radius, classIndex) {
     classIndex.innerHTML += ea;
     origin += deg;
   });
-}
+};
 
-circularText("TECHSTACK", 8, 0); // window.onscroll(scrollNavBar())
-// Body height
+circularText("TECHSTACK", 8, 0); // Body height
 
 window.onload = function getBodyHeight() {
   var bodyHeight = document.getElementById('body').clientHeight;
