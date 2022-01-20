@@ -29,7 +29,7 @@ window.onload = navHideShow();
 // Auto activate navShowHide if scrolled down too far
 
 window.addEventListener("scroll", function() {
-    if((window.scrollY || document.documentElement.scrollTop) <= 100) {
+    if((window.scrollY || document.documentElement.scrollTop) <=50) {
       navHideShow()
     } else {
       navShowHide()
@@ -53,6 +53,15 @@ const  circularText = (txt, radius, classIndex) => {
 }
 
 circularText("TECHSTACK", 8, 0)
+
+const techStackIcons = () => {
+  document.getElementById("icons").style.color = "#f7fff7";
+  setTimeout(techStackIconsRemove,10000);
+};
+
+const techStackIconsRemove = () => {
+  document.getElementById("icons").style.color =  "#343434";
+}
 
 // Body height
 

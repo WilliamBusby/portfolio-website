@@ -30,7 +30,7 @@ var navShowHide = function navShowHide() {
 window.onload = navHideShow(); // Auto activate navShowHide if scrolled down too far
 
 window.addEventListener("scroll", function () {
-  if ((window.scrollY || document.documentElement.scrollTop) <= 100) {
+  if ((window.scrollY || document.documentElement.scrollTop) <= 50) {
     navHideShow();
   } else {
     navShowHide();
@@ -48,7 +48,17 @@ var circularText = function circularText(txt, radius, classIndex) {
   });
 };
 
-circularText("TECHSTACK", 8, 0); // Body height
+circularText("TECHSTACK", 8, 0);
+
+var techStackIcons = function techStackIcons() {
+  document.getElementById("icons").style.color = "#f7fff7";
+  setTimeout(techStackIconsRemove, 10000);
+};
+
+var techStackIconsRemove = function techStackIconsRemove() {
+  document.getElementById("icons").style.color = "#343434";
+}; // Body height
+
 
 window.onload = function getBodyHeight() {
   var bodyHeight = document.getElementById('body').clientHeight;

@@ -15,7 +15,7 @@
     <div id="big-stars"></div>
     <nav id="nav">
       <a href="#home" title="Home">
-        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg" id="drop-down-anchor" onClick="navHideShow()">
+        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg" id="drop-down-anchor" onclick="navHideShow()">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M250 0H0C0 138.071 111.929 250 250 250V0Z" fill="#F7FFF7"/>
           <rect x="89" y="61" width="125" height="19" rx="5" fill="#343434"/>
           <rect x="89" y="124" width="125" height="18" rx="5" fill="#343434"/>
@@ -40,13 +40,18 @@
       <h2>Junior software engineer.</h2>
     </header>
 
-    <a href="#main-projects" class="down-button" title="Next section (projects)" onClick="smoothScrolling()"></a>
+    <a href="#main-projects" class="down-button" title="Next section (projects)"></a>
 
-    <section id="techstack">
+    <section id="techstack" class="techstack">
       <div class="circText" id="techstack-text"></div>
-      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" id="circle" onclick="techStackIcons()">
         <circle cx="250" cy="250" r="250" fill="#F7FFF7"/>
       </svg>   <!-- To do, replace with image of moon or other body -->       
+      <div id="icons">
+        <div class="techstack__icon" id="techstack__css3"><i class="fab fa-css3-alt"></i></div>
+        <div class="techstack__icon" id="techstack__html5"><i class="fab fa-html5"></i></div>
+        <div class="techstack__icon" id="techstack__javascript"><i class="fab fa-js-square"></i></div>
+      </div>
     </section>
 
     <div class="section-divider"></div>
@@ -126,9 +131,7 @@
         <div id="main-contact-me__content">
           <p>Feel free to contact me either using the Github, Linkedin and email links in the footer.</p>
           <div id="main-contact-me__image">
-            <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="250" cy="250" r="250" fill="#F7FFF7"/>
-            </svg>   <!-- To do, replace with image of moon or other body -->    
+            <i class="fas fa-rocket"></i>   
           </div>
         </div>
       </section>
