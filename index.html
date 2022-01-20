@@ -15,7 +15,7 @@
     <div id="big-stars"></div>
     <nav id="nav">
       <a href="#home" title="Home">
-        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg" id="drop-down-anchor" onClick="navHideShow()">
+        <svg viewBox="0 0 250 250" fill="none" xmlns="http://www.w3.org/2000/svg" id="drop-down-anchor" onclick="navHideShow()">
           <path fill-rule="evenodd" clip-rule="evenodd" d="M250 0H0C0 138.071 111.929 250 250 250V0Z" fill="#F7FFF7"/>
           <rect x="89" y="61" width="125" height="19" rx="5" fill="#343434"/>
           <rect x="89" y="124" width="125" height="18" rx="5" fill="#343434"/>
@@ -31,8 +31,7 @@
         <li class="ul__item ul__line">|</li>
         <li class="ul__item ul__text" id="nav-contact"><a href="#main-contact-me" title="Contact me" onclick="navShowHide()">CONTACT ME</a></li>
         <li class="ul__item ul__line">|</div>
-          <!-- To do, update resume link to pdf of CV -->
-        <li class="ul__item ul__text" id="nav-resume"><a href="#" title="Resume">RESUME</a></li> 
+        <li class="ul__item ul__text" id="nav-resume"><a href="./William_Busby_CV.pdf" title="Resume" target="_blank">RESUME</a></li> 
       </ul>
     </nav>
     <header>
@@ -40,13 +39,16 @@
       <h2>Junior software engineer.</h2>
     </header>
 
-    <a href="#main-projects" class="down-button" title="Next section (projects)" onClick="smoothScrolling()"></a>
+    <a href="#main-projects" class="down-button" title="Next section (projects)"></a>
 
-    <section id="techstack">
+    <section id="techstack" class="techstack">
       <div class="circText" id="techstack-text"></div>
-      <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="250" cy="250" r="250" fill="#F7FFF7"/>
-      </svg>   <!-- To do, replace with image of moon or other body -->       
+      <div id="astronaut" onclick="techStackIcons()"><i class="fas fa-user-astronaut"></i></div>
+      <div id="icons">
+        <div class="techstack__icon" id="techstack__css3"><i class="fab fa-css3-alt"></i></div>
+        <div class="techstack__icon" id="techstack__html5"><i class="fab fa-html5"></i></div>
+        <div class="techstack__icon" id="techstack__javascript"><i class="fab fa-js-square"></i></div>
+      </div>
     </section>
 
     <div class="section-divider"></div>
@@ -124,25 +126,10 @@
       <section id="main-contact-me">
         <h1>CONTACT ME</h1>
         <div id="main-contact-me__content">
-          <div id="main-contact-me__explain">
-            <p>Feel free to contact me either using the form or via the Github and Linkedin links in the footer.</p>
-            <div id="main-contact-me__image">
-              <svg viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="250" cy="250" r="250" fill="#F7FFF7"/>
-              </svg>   <!-- To do, replace with image of moon or other body -->    
-            </div>
+          <p>Contact me either using the Github, Linkedin or email links in the footer.</p>
+          <div id="main-contact-me__image">
+            <i class="fas fa-rocket"></i>   
           </div>
-          <form id="contact-form">
-            <label for="contact-me-first-name" class="label-contact">First Name</label>
-            <input type="text" id="contact-me-first-name" class="contact-me-form"/>
-            <label for="contact-me-last-name" class="label-contact">Last Name</label>
-            <input type="text" id="contact-me-last-name" class="contact-me-form"/>
-            <label for="contact-me-email" class="label-contact">Email</label>
-            <input type="email" id="contact-me-email" class="contact-me-form"/>
-            <label for="contact-me-textinfo" class="label-contact">Please leave your message here.</label>
-            <input type="textarea" id="contact-me-textinfo" rows=5 cols=20 name="contact-me-textinfo"/>
-            <button type="submit">Submit</button>
-          </form>
         </div>
       </section>
     </main>
