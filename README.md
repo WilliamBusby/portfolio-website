@@ -18,7 +18,7 @@
 
   Website contains:
 
-    - Techstack with list of known coding languages and softwares.
+    - Techstack with list of currently known coding languages and softwares.
 
     - Showcase of completed projects with links to both the git repositories and project websites.
 
