@@ -308,15 +308,16 @@ main {
   #main-contact-me {
 
     &__content {
-      height: max(15vh, 30vw);
+      height: max(25vh, 30vw);
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 2fr;
       column-gap: 10vw;
+      justify-items: center;
     }
 
     &__image {
-      width: 10vw;
-      height: 10vw;
+      width: min(40vw,max(20vw,15vh));
+      height: min(40vw,max(20vw,15vh));
     }
 
     &__explain {
@@ -324,26 +325,9 @@ main {
       grid-template-rows: 1fr 2fr;
       justify-items: center;
     }
-  }
 
-  #contact-form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-
-    .contact-me-form {
-      height: 2vw;
-      width: 20vw;
-    }
-
-    button {
-      margin-top: 0.5vw;
-      font-size: 2vw;
-    }
-
-    .label-contact {
-      font-size: 2vw;
+    p {
+      font-size: 3vw;
     }
   }
 }
@@ -396,12 +380,23 @@ footer {
   main {
 
     #main-contact-me {
+
+      &__image {
+        width: 20vw;
+        height: 20vw;
+      }
+
       &__content {
         height: max(10vh,25vw);
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+      }
+
+      p {
+        font-size: 3vw;
       }
     }
   }
-
 }
 
 // Tablet => Desktop
@@ -471,22 +466,19 @@ footer {
     }
 
     #main-contact-me {
+
+      &__image {
+        width: 10vw;
+        height: 10vw;
+      }
+
       &__content {
-        height: max(35vh,30vw);
+        height: max(15vh,15vw);
       }
-    }
 
-    #contact-form {
-      .contact-me-form {
-        font-size: 1.75vw;
+      p {
+        font-size: 2vw;
       }
-    }
-
-    #contact-me-textinfo {
-      height: 4vw;
-      width: 20vw;
-      font-size: 2vw;
-      vertical-align: top;
     }
   }
 }
