@@ -208,7 +208,7 @@ header {
     z-index: 98;
     position: absolute;
     bottom: -1vw;
-    right: 0.25vw;
+    right: 0.5vw;
     font-size: 10vw;
     
     &:hover {
@@ -258,7 +258,7 @@ main {
   margin-left: 10%;
   font-family: $secondary-font;
 
-  h1 {
+  h2 {
     text-align: center;
     padding-bottom: 5vw;
     font-size: 5vw;
@@ -481,7 +481,7 @@ footer {
 
     #main-projects {
       
-      h1 {
+      h2 {
         padding-bottom: 0;
       }
 
