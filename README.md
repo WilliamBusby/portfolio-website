@@ -34,4 +34,10 @@
 
   Website link: #
 
-  Figma design link: https://www.figma.com/file/622ap2sPLhNtUMLq8Zk9xt/Portfolio-Website
+  Figma design link: https://www.figma.com/file/pqMtNP3H4qSYcuU9bykhjD/Portfolio-Website
+
+## ICON COPYRIGHTS
+
+  All rights go to respective owners of each icon used.
+
+  All icons currently used from fontawesome, licensing found at: https://fontawesome.com/license

@@ -8,11 +8,11 @@ var navHideShow = function navHideShow() {
 
   for (var i = 0; i < listOfNavItems.length; i++) {
     if (document.getElementById('body').clientWidth < 768) {
-      listOfNavItems[i].style.fontSize = '2vw';
+      listOfNavItems[i].style.fontSize = '2.5vw';
     } else if (document.getElementById('body').clientWidth < 992) {
-      listOfNavItems[i].style.fontSize = '1.5vw';
+      listOfNavItems[i].style.fontSize = '2vw';
     } else {
-      listOfNavItems[i].style.fontSize = '1.2vw';
+      listOfNavItems[i].style.fontSize = '1.5vw';
     }
   }
 };
