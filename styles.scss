@@ -9,7 +9,6 @@
   --body-height: 2500;
   --top-height-after: 2500px;
   --transform-Y: -2500px;
-  --anchor-size: 10vw;
 }
 
 // HTML
@@ -197,9 +196,42 @@ header {
   bottom: 5vw;
   right: 5vw;
 
-  svg {
+  #circle {
     width: 10vw;
     height: 10vw;
+    z-index: 98;
+    position: absolute;
+    bottom: 0vw;
+    right: -0.2vw;
+    
+    &:hover {
+      cursor:pointer;
+    }
+  }
+
+  #icons {
+    font-size: 5vw;
+    transition: 1s;
+    color: $background-primary-colour;
+    transition-property: color;
+  }
+
+  &__css3 {
+    position: absolute;
+    bottom: 2vw;
+    right: 15vw;
+  }
+
+  &__html5 {
+    position: absolute;
+    bottom: 15vw;
+    right: 3.5vw;
+  }
+  
+  &__javascript {
+    position: absolute;
+    bottom: 12vw;
+    right: 11.5vw;
   }
 }
 
@@ -296,6 +328,7 @@ main {
       display: grid;
       grid-template-columns: 1fr 2fr;
       column-gap: 5vw;
+      text-align: justify;
 
       &__image {
         border: $basic-border-design-1px;
@@ -313,11 +346,11 @@ main {
       grid-template-rows: 1fr 2fr;
       column-gap: 10vw;
       justify-items: center;
+      text-align: justify;
     }
 
     &__image {
-      width: min(40vw,max(20vw,15vh));
-      height: min(40vw,max(20vw,15vh));
+      font-size: min(20vw,max(10vw,10vh));
     }
 
     &__explain {
@@ -382,8 +415,8 @@ footer {
     #main-contact-me {
 
       &__image {
-        width: 20vw;
-        height: 20vw;
+        width: 10vw;
+        height: 10vw;
       }
 
       &__content {
@@ -468,8 +501,7 @@ footer {
     #main-contact-me {
 
       &__image {
-        width: 10vw;
-        height: 10vw;
+        font-size: min(20vw,max(10vw,10vh));
       }
 
       &__content {
