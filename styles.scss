@@ -5,7 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 
-// Remove default margin and padding
+// Set default margin and padding to 0
 
 * {
   margin: 0;
@@ -187,7 +187,6 @@ header {
 .down-button {
   position: absolute;
   bottom: 5vh;
-  text-align: center;
   left: 47.5vw;
   background: url('https://static1.squarespace.com/static/5e78f290575a6321739eba41/t/5ec8625c6dad0e25fa5a8234/1590190684880/Arrow.png');
   height: 5vmax;

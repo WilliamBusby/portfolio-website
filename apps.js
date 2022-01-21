@@ -1,19 +1,23 @@
 // Navigation bar
 
+  // Hide the top corner nav icon, show the nav ul bar
+
 const navHideShow = () => {
   document.getElementById('drop-down-anchor').style.width = '0px';
   document.getElementById('drop-down-anchor').style.height = '0px';
   const listOfNavItems = document.getElementsByClassName('ul__item');
   for (let i = 0; i < listOfNavItems.length; i++) {
-    if (document.getElementById('body').clientWidth < 768) {
+    if (document.getElementById('body').clientWidth < 768) { // Mobile view
       listOfNavItems[i].style.fontSize = '2.5vw';
-    } else if (document.getElementById('body').clientWidth < 992) {
+    } else if (document.getElementById('body').clientWidth < 992) { // Tablet view
       listOfNavItems[i].style.fontSize = '2vw';
-    } else {
+    } else { // Desktop view
       listOfNavItems[i].style.fontSize = '1.5vw';
     }
   }
 }
+
+  // Show the top corner nav icon, hide the nav ul bar
 
 const navShowHide = () => {
   document.getElementById('drop-down-anchor').style.width = 'min(10vw,10vh)';
@@ -24,9 +28,11 @@ const navShowHide = () => {
   }
 }
 
-window.onload = navHideShow();
+  // Loads the navigation bar on reload
 
-// Auto activate navShowHide if scrolled down too far
+window.onload = navHideShow()
+
+// Auto activate navShowHide if user has scrolled down the page, if they scroll back up active navHideShow
 
 window.addEventListener("scroll", function() {
     if((window.scrollY || document.documentElement.scrollTop) <=50) {
@@ -37,6 +43,8 @@ window.addEventListener("scroll", function() {
 });
 
 // Techstack
+
+  // Circular text used for techstack
 
 const  circularText = (txt, radius, classIndex) => {
   txt = txt.split(""),
@@ -52,12 +60,17 @@ const  circularText = (txt, radius, classIndex) => {
   });
 }
 
+  // Runs circularText for the TECHSTACK
 circularText("TECHSTACK", 8, 0)
+
+  // Changes the colour of the techstack icons to be visible, after 10 seconds they fade back
 
 const techStackIcons = () => {
   document.getElementById("icons").style.color = "#f7fff7";
-  setTimeout(techStackIconsRemove,10000);
+  setTimeout(techStackIconsRemove,10000); // Ten second timeout
 };
+
+  // Changes the colour of the techstack icons to not be visible (background colour)
 
 const techStackIconsRemove = () => {
   document.getElementById("icons").style.color =  "#343434";
@@ -65,9 +78,12 @@ const techStackIconsRemove = () => {
 
 // Body height
 
+  // Gets the body height of the document and changes the background related values for stars depending on this height. 
+  // Only changes values on reload.
+
 window.onload = function getBodyHeight() {
   const bodyHeight = document.getElementById('body').clientHeight;
-  document.documentElement.style.setProperty('--body-height',bodyHeight);
-  document.documentElement.style.setProperty('--transform-Y', -1 * bodyHeight + "px");
-  document.documentElement.style.setProperty('--top-height-after',bodyHeight + "px");
+  document.documentElement.style.setProperty('--body-height',bodyHeight); // Height of the body variable
+  document.documentElement.style.setProperty('--transform-Y', -1 * bodyHeight + "px"); // TransformY value for transition
+  document.documentElement.style.setProperty('--top-height-after',bodyHeight + "px"); // Top value for transition
 }
