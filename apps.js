@@ -30,15 +30,15 @@ const navShowHide = () => {
 
   // Loads the navigation bar on reload
 
-window.onload = navHideShow()
+window.onload = navHideShow();
 
 // Auto activate navShowHide if user has scrolled down the page, if they scroll back up active navHideShow
 
 window.addEventListener("scroll", function() {
     if((window.scrollY || document.documentElement.scrollTop) <=50) {
-      navHideShow()
+      navHideShow();
     } else {
-      navShowHide()
+      navShowHide();
     }
 });
 
