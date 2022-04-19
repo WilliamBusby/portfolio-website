@@ -1,0 +1,45 @@
+nav {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 0;
+  padding: 10px;
+  margin-top: 5vw;
+  margin-left: 10vw;
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+  height: 4vw;
+  transition: 1s;
+  transition-property: font-size;
+}
+nav #drop-down-anchor {
+  background: transparent;
+  border-left: 1px solid #343434;
+  border-bottom: 1px solid #343434;
+  border-bottom-left-radius: 100%;
+  border-bottom-right-radius: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(10vw, 10vh);
+  height: min(10vw, 10vh);
+  z-index: 99;
+  transition: 0.5s;
+}
+nav #drop-down-anchor:hover {
+  cursor: pointer;
+}
+nav .ul {
+  display: flex;
+  list-style-type: none;
+  width: 80vw;
+  justify-content: space-between;
+  top: -10vh;
+}
+nav .ul a {
+  padding: 1vw;
+}
+nav .ul__item {
+  transition: 0.5s;
+}

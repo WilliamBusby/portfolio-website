@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+header {
+  width: 100vw;
+  text-align: left;
+  padding-left: 10vw;
+  height: 20vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 50vh;
+  padding-bottom: 30vh;
+
+  h1 {
+    font-family: $heading-font;
+    font-size: 8vw;
+    text-align: left;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+
+  h2 {
+    font-size: 3vw;
+    font-family: $secondary-font;
+  }
+}
