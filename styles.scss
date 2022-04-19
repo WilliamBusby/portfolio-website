@@ -185,7 +185,7 @@ main {
     text-align: center;
     padding-bottom: 5vw;
     font-size: 5vw;
-    padding-top: 3vw;
+    padding-top: 1.5vw;
   }
 
   .section-divider {
@@ -198,8 +198,8 @@ main {
   #main-projects {
     width: 100%;
     display: grid;
-    grid-template-rows: 1fr 2fr 0fr 2fr 0fr 2fr 0fr 2fr;
-    row-gap: 5vw;
+    grid-template-rows: 1fr 1.5fr 0fr 1.5fr 0fr 1.5fr 0fr 1.5fr;
+    row-gap: 2vw;
     margin-bottom: 5vw;
     align-items: center;
 
@@ -215,6 +215,9 @@ main {
 
       &__text {
         width: 35vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
         &__title-and-icons {
           display: flex;
@@ -259,16 +262,7 @@ main {
     margin-bottom: 5vw;
 
     &__content {
-      display: grid;
-      grid-template-columns: 1fr 2fr;
-      column-gap: 5vw;
       text-align: justify;
-
-      &__image {
-        border: $basic-border-design-1px;
-        border-radius: 10px;
-        background-color: purple;
-      }
     }
   }
 
@@ -391,7 +385,6 @@ main {
 
         &__image {
           width: 25vw;
-          height: 25vw;
         }
 
         &__text {
