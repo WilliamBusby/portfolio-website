@@ -40,6 +40,7 @@ $star-max-value: 10000;
   height: $size;
   background: transparent;
   animation: animStar $time linear infinite;
+  z-index: 1;
 }
 
 @mixin starAfter($size) {
