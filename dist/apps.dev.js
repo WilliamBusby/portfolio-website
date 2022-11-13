@@ -43,33 +43,31 @@ window.addEventListener("scroll", function () {
   }
 }); // Techstack
 // Circular text used for techstack
-
-var circularText = function circularText(txt, radius, classIndex) {
-  txt = txt.split(""), classIndex = document.getElementsByClassName("circText")[classIndex];
-  var deg = 120 / txt.length,
-      origin = -60;
-  txt.forEach(function (ea) {
-    ea = "<p style='height:".concat(radius, "vw;position:absolute;transform:rotate(").concat(origin, "deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>").concat(ea, "</p>");
-    classIndex.innerHTML += ea;
-    origin += deg;
-  });
-}; // Runs circularText for the TECHSTACK
-
-
-circularText("TECHSTACK", 8, 0); // Changes the colour of the techstack icons to be visible, after 10 seconds they fade back
-
-var techStackIcons = function techStackIcons() {
-  document.getElementById("icons").style.color = "#f7fff7";
-  setTimeout(techStackIconsRemove, 10000); // Ten second timeout
-}; // Changes the colour of the techstack icons to not be visible (background colour)
-
-
-var techStackIconsRemove = function techStackIconsRemove() {
-  document.getElementById("icons").style.color = "#343434";
-}; // Body height
+// const  circularText = (txt, radius, classIndex) => {
+//   txt = txt.split(""),
+//     classIndex = document.getElementsByClassName("circText")[classIndex];
+//   let deg = 120 / txt.length,
+//     origin = -60;
+//   txt.forEach((ea) => {
+//     ea = `<p style='height:${radius}vw;position:absolute;transform:rotate(${origin}deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>${ea}</p>`;
+//     classIndex.innerHTML += ea;
+//     origin += deg;
+//   });
+// }
+// Runs circularText for the TECHSTACK
+// circularText("TECHSTACK", 8, 0)
+// Changes the colour of the techstack icons to be visible, after 10 seconds they fade back
+// const techStackIcons = () => {
+//   document.getElementById("icons").style.color = "#f7fff7";
+//   setTimeout(techStackIconsRemove,10000); // Ten second timeout
+// };
+// Changes the colour of the techstack icons to not be visible (background colour)
+// const techStackIconsRemove = () => {
+//   document.getElementById("icons").style.color =  "#343434";
+// }
+// Body height
 // Gets the body height of the document and changes the background related values for stars depending on this height. 
 // Only changes values on reload.
-
 
 window.onload = function getBodyHeight() {
   var bodyHeight = document.getElementById('body').clientHeight;
