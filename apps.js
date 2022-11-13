@@ -46,35 +46,35 @@ window.addEventListener("scroll", function() {
 
   // Circular text used for techstack
 
-const  circularText = (txt, radius, classIndex) => {
-  txt = txt.split(""),
-    classIndex = document.getElementsByClassName("circText")[classIndex];
+// const  circularText = (txt, radius, classIndex) => {
+//   txt = txt.split(""),
+//     classIndex = document.getElementsByClassName("circText")[classIndex];
 
-  let deg = 120 / txt.length,
-    origin = -60;
+//   let deg = 120 / txt.length,
+//     origin = -60;
 
-  txt.forEach((ea) => {
-    ea = `<p style='height:${radius}vw;position:absolute;transform:rotate(${origin}deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>${ea}</p>`;
-    classIndex.innerHTML += ea;
-    origin += deg;
-  });
-}
+//   txt.forEach((ea) => {
+//     ea = `<p style='height:${radius}vw;position:absolute;transform:rotate(${origin}deg);transform-origin: 0 100%;right: 4vw;bottom: 5.5vw;'>${ea}</p>`;
+//     classIndex.innerHTML += ea;
+//     origin += deg;
+//   });
+// }
 
   // Runs circularText for the TECHSTACK
-circularText("TECHSTACK", 8, 0)
+// circularText("TECHSTACK", 8, 0)
 
   // Changes the colour of the techstack icons to be visible, after 10 seconds they fade back
 
-const techStackIcons = () => {
-  document.getElementById("icons").style.color = "#f7fff7";
-  setTimeout(techStackIconsRemove,10000); // Ten second timeout
-};
+// const techStackIcons = () => {
+//   document.getElementById("icons").style.color = "#f7fff7";
+//   setTimeout(techStackIconsRemove,10000); // Ten second timeout
+// };
 
   // Changes the colour of the techstack icons to not be visible (background colour)
 
-const techStackIconsRemove = () => {
-  document.getElementById("icons").style.color =  "#343434";
-}
+// const techStackIconsRemove = () => {
+//   document.getElementById("icons").style.color =  "#343434";
+// }
 
 // Body height
 
